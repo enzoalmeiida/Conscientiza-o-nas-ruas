@@ -1,4 +1,4 @@
-// Rolagem suave para links do menu e botões
+// Smooth scrolling for in-page links
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', (e) => {
     const targetId = link.getAttribute('href').slice(1);
@@ -11,32 +11,33 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   });
 });
 
-// Fade-in ao rolar usando IntersectionObserver
-const observer = new IntersectionObserver((entries) => {
+// IntersectionObserver for animated reveal (fade + slide)
+const revealObserver = new IntersectionObserver((entries, obs) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
+      obs.unobserve(entry.target);
     }
   });
 }, {threshold: 0.12});
 
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+document.querySelectorAll('.hero-animate, .card-animate, .info-card, .stat-card').forEach(el => revealObserver.observe(el));
 
-// Pequena melhoria: ajustar link ativo conforme rolagem
-const sections = document.querySelectorAll('main section[id]');
-const navLinks = document.querySelectorAll('.menu a');
-const setActive = () => {
-  let idx = sections.length - 1;
-  for (let i = 0; i < sections.length; i++) {
-    const rect = sections[i].getBoundingClientRect();
-    if (rect.top > 80) { idx = i; break; }
-    idx = i;
+// Update active nav link based on scroll position
+const sections = Array.from(document.querySelectorAll('main section[id]'));
+const navLinks = Array.from(document.querySelectorAll('.menu a'));
+const onScroll = () => {
+  const offset = window.innerHeight * 0.25;
+  let current = sections[0];
+  for (const sec of sections) {
+    const rect = sec.getBoundingClientRect();
+    if (rect.top <= offset) current = sec;
   }
-  navLinks.forEach(a => a.classList.remove('active'));
-  const id = sections[idx]?.id;
-  const activeLink = document.querySelector(`.menu a[href="#${id}"]`);
-  if (activeLink) activeLink.classList.add('active');
+  navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${current.id}`));
 };
-window.addEventListener('scroll', setActive, {passive:true});
-setActive();
+window.addEventListener('scroll', onScroll, {passive:true});
+onScroll();
+
+// Minor: lazy load images (set loading attr)
+document.querySelectorAll('img').forEach(img => img.setAttribute('loading','lazy'));
+

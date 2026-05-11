@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>O Desenvolvimento do Ser Humano nas Ruas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,42 +21,105 @@
   </header>
 
   <main>
-    <section id="hero" class="hero fade-in">
+    <section id="hero" class="hero">
+      <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1600&q=80')"></div>
+      <div class="hero-overlay"></div>
       <div class="container hero-grid">
-        <div class="hero-text">
-          <h1>Situação de Rua: resultado de desigualdades, não escolhas isoladas</h1>
+        <div class="hero-text hero-animate">
+          <p class="eyebrow">Campanha pública de conscientização</p>
+          <h1>Quem está na rua não é invisível. É sujeito de direitos.</h1>
           <p class="lead">A população em situação de rua é um fenômeno social complexo e multifacetado, envolvendo dimensões econômicas, sociais e psicológicas. Não se trata apenas de decisões individuais: é expressão da desigualdade social, da precarização das condições de vida e da falta de suporte institucional.</p>
-          <p><a class="btn" href="#infancia">Entenda a Realidade</a></p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#infancia">Entenda a realidade</a>
+            <a class="btn ghost" href="#stats">Ver dados</a>
+          </div>
+          <div class="hero-metrics">
+            <div class="metric-pill">
+              <strong>Proteção social</strong>
+              <span>políticas públicas importam para romper o ciclo da rua</span>
+            </div>
+            <div class="metric-pill">
+              <strong>Direitos e dignidade</strong>
+              <span>acolher não é caridade, é responsabilidade coletiva</span>
+            </div>
+          </div>
         </div>
-        <div class="hero-image" aria-hidden="true"></div>
+        <div class="hero-visual" aria-hidden="true">
+          <img src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=1000&q=80" alt="Pessoas em ação solidária na cidade"/>
+        </div>
       </div>
     </section>
 
-    <section id="infancia" class="section pattern fade-in">
+    <section id="stats" class="section stats-section">
+      <div class="container stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">O problema é estrutural</div>
+          <div class="stat-desc">A situação de rua nasce da desigualdade, da precarização da vida e da ausência de suporte institucional, e não de escolhas isoladas.</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">Cuidar é política pública</div>
+          <div class="stat-desc">Boletins do Observatório da Rua (UFMG) e referências do IBGE ajudam a dimensionar o fenômeno e orientar respostas públicas.</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">72% — Ruptura</div>
+          <div class="stat-desc">Percentual citado no trabalho indicando que a maioria dos relatos aponta ruptura familiar como fator preponderante.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="infancia" class="section pattern">
       <div class="container">
+        <p class="section-kicker">Infância e ruptura de vínculos</p>
         <h2>Infância e Ruptura</h2>
         <p>A entrada na rua costuma estar precedida por ruptura dos vínculos familiares: cerca de 72% dos relatos indicam afastamento impulsionado por pobreza, violência doméstica e negligência. Em muitos casos, crianças e adolescentes deixam o lar após conflitos que fragilizam redes de proteção.</p>
-        <p>O trabalho infantil aparece como estratégia de sobrevivência, mas implica perda de direitos fundamentais. A "adultização precoce" ocorre quando a criança assume responsabilidades próprias de adultos — gerar renda, cuidar de irmãos ou tomar decisões vitais — perdendo o direito de brincar, evasando da escola e sofrendo prejuízos no desenvolvimento emocional e cognitivo.</p>
-      </div>
-    </section>
-
-    <section id="saude" class="section fade-in">
-      <div class="container grid-2">
-        <div>
-          <h2>Saúde Mental e Sobrevivência</h2>
-          <p>Para quem vive na rua, o espaço urbano transforma-se em um ambiente de socialização centrado na sobrevivência: vigilância constante, estratégias de resistência e trocas práticas entre pares. Essas exigências produzem desgaste físico e privação de sono, fatores que impactam gravemente a saúde mental, contribuindo para depressão, ansiedade e dificuldade de regulação emocional.</p>
-        </div>
-        <div>
-          <p class="muted">O uso de álcool e outras drogas, segundo o estudo, muitas vezes não é a causa inicial da trajetória, mas uma <em>estratégia de enfrentamento</em> — uma tentativa de aliviar sofrimento emocional, traumas e as condições adversas das ruas. Intervenções devem reconhecer essa função de enfrentamento para oferecer cuidados mais adequados.</p>
+        <div class="split">
+          <div class="text">
+            <p>O trabalho infantil aparece como estratégia de sobrevivência, mas implica perda de direitos fundamentais. A "adultização precoce" ocorre quando a criança assume responsabilidades próprias de adultos — gerar renda, cuidar de irmãos ou tomar decisões vitais — perdendo o direito de brincar, evasando da escola e sofrendo prejuízos no desenvolvimento emocional e cognitivo.</p>
+          </div>
+          <div class="media">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80" alt="Pessoa em contexto urbano"/>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="estigma" class="section pattern fade-in">
+    <section id="saude" class="section">
       <div class="container">
+        <p class="section-kicker">Saúde mental e sobrevivência cotidiana</p>
+        <h2>Saúde Mental e Sobrevivência</h2>
+        <div class="card-grid">
+          <article class="info-card card-animate">
+            <div class="icon">🛡️</div>
+            <h3>Aprender a sobreviver</h3>
+            <p>A rua se torna um espaço de socialização voltado à sobrevivência: vigilância constante, estratégias de resistência e trocas entre pares moldam comportamentos e habilidades práticas.</p>
+          </article>
+          <article class="info-card card-animate">
+            <div class="icon">💤</div>
+            <h3>Impactos na saúde mental</h3>
+            <p>Privação de sono, insegurança e estresse contínuo contribuem para depressão, ansiedade e dificuldades de regulação emocional.</p>
+          </article>
+          <article class="info-card card-animate">
+            <div class="icon">🧪</div>
+            <h3>Estratégia de enfrentamento</h3>
+            <p>O consumo de álcool e outras drogas frequentemente funciona como uma estratégia de enfrentamento para aliviar sofrimento e traumas decorrentes da vida nas ruas.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="estigma" class="section pattern">
+      <div class="container">
+        <p class="section-kicker">Estigma e preconceito social</p>
         <h2>Estigma e Invisibilidade</h2>
-        <p>O documento descreve a "invisibilidade social" como a sensação repetida de ser ignorado, evitado ou tratado como incômodo. Pessoas em situação de rua relatam que a sociedade frequentemente lhes atribui rótulos simplistas — associando-os à criminalidade, à preguiça ou ao fracasso — que apagam a complexidade de suas trajetórias.</p>
-        <p>Esse estigma dificulta o acesso a serviços de saúde, a oportunidades de trabalho e a políticas de reinserção, ao transformar um problema estrutural em uma questão moralizada. Combater o preconceito exige reconhecer dignidade, ouvir histórias e implementar respostas públicas que enfrentem causas sociais profundas.</p>
+        <div class="split reverse">
+          <div class="media">
+            <img src="https://images.unsplash.com/photo-1529429612779-c68e8f5bf5f5?auto=format&fit=crop&w=900&q=80" alt="Pessoa em contexto urbano"/>
+          </div>
+          <div class="text">
+            <p>O documento descreve a "invisibilidade social" como a sensação repetida de ser ignorado, evitado ou tratado como incômodo. Pessoas em situação de rua relatam que a sociedade frequentemente lhes atribui rótulos simplistas — associando-os à criminalidade, à preguiça ou ao fracasso — que apagam a complexidade de suas trajetórias.</p>
+            <p>Esse estigma dificulta o acesso a serviços de saúde, a oportunidades de trabalho e a políticas de reinserção, ao transformar um problema estrutural em uma questão moralizada. Combater o preconceito exige reconhecer dignidade, ouvir histórias e implementar respostas públicas que enfrentem causas sociais profundas.</p>
+          </div>
+        </div>
       </div>
     </section>
   </main>
