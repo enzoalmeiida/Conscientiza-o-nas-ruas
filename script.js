@@ -41,3 +41,22 @@ onScroll();
 // Minor: lazy load images (set loading attr)
 document.querySelectorAll('img').forEach(img => img.setAttribute('loading','lazy'));
 
+// Hamburger menu toggle
+const menuToggle = document.querySelector('.menu-toggle');
+const menu = document.querySelector('.menu');
+
+if (menuToggle) {
+  menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    menu.classList.toggle('active');
+  });
+  
+  // Close menu when a link is clicked
+  document.querySelectorAll('.menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      menuToggle.classList.remove('active');
+      menu.classList.remove('active');
+    });
+  });
+}
+

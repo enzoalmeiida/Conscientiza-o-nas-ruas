@@ -11,9 +11,14 @@ body{margin:0;font-family:Roboto,Inter,Helvetica,Arial,sans-serif;background:var
 .container{max-width:1200px;margin:0 auto;padding:2rem}
 
 .site-header{background:transparent;position:static;padding:1rem 0}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .brand{font-family:Poppins,Inter,system-ui,Segoe UI,Arial,sans-serif;font-weight:700;color:#0f172a;font-size:1.05rem}
-.menu{list-style:none;margin:0;padding:0;display:flex;gap:.5rem 1rem;flex-wrap:wrap;justify-content:flex-end}
+.menu-toggle{display:none;flex-direction:column;gap:.35rem;background:none;border:none;cursor:pointer;padding:.5rem}
+.menu-toggle span{width:24px;height:2px;background:var(--muted);border-radius:2px;transition:all .3s ease}
+.menu-toggle.active span:nth-child(1){transform:rotate(45deg) translate(10px,10px)}
+.menu-toggle.active span:nth-child(2){opacity:0}
+.menu-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(7px,-7px)}
+.menu{list-style:none;margin:0;padding:0;display:flex;gap:.5rem 1rem;justify-content:center}
 .menu a{text-decoration:none;color:var(--muted);padding:.5rem .75rem;border-radius:8px;font-weight:500}
 .menu a:hover{background:rgba(11,102,255,0.08);color:var(--accent)}
 
@@ -84,10 +89,15 @@ body{margin:0;font-family:Roboto,Inter,Helvetica,Arial,sans-serif;background:var
   .hero-metrics{grid-template-columns:1fr}
 }
 
+@media (max-width:700px){
+  .menu-toggle{display:flex}
+  .menu{position:absolute;top:70px;left:0;right:0;flex-direction:column;background:var(--surface);border-bottom:1px solid rgba(11,102,255,0.1);box-shadow:0 4px 12px rgba(0,0,0,0.08);padding:1rem 0;max-height:0;overflow:hidden;transition:max-height .3s ease;gap:0;justify-content:flex-start}
+  .menu.active{max-height:300px}
+  .menu a{display:block;width:100%;padding:.75rem 1rem;border-radius:0}
+}
+
 @media (max-width:520px){
   .container{padding:1rem}
-  .nav{flex-direction:column;align-items:flex-start}
-  .menu{width:100%;justify-content:flex-start}
   .hero{min-height:56vh}
   .hero-visual img{height:220px}
   .btn.ghost{margin-left:0}
