@@ -58,6 +58,8 @@ body{margin:0;font-family:Roboto,Inter,Helvetica,Arial,sans-serif;background:var
 .split .media{min-height:360px;overflow:hidden}
 .split .media img{width:100%;height:100%;object-fit:cover;border-radius:12px;box-shadow:var(--shadow)}
 .split .text{font-size:1rem;color:var(--muted)}
+.about-band{margin-top:1.8rem;padding:1.2rem 1.25rem;background:linear-gradient(90deg,rgba(11,102,255,0.08),rgba(255,107,53,0.08));border:1px solid rgba(11,102,255,0.12);border-radius:14px;box-shadow:var(--shadow)}
+.about-band p{margin:0;color:#334155}
 
 /* Card grid for health */
 .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
@@ -101,4 +103,5 @@ body{margin:0;font-family:Roboto,Inter,Helvetica,Arial,sans-serif;background:var
   .hero{min-height:56vh}
   .hero-visual img{height:220px}
   .btn.ghost{margin-left:0}
+  .about-band{padding:1rem}
 }
